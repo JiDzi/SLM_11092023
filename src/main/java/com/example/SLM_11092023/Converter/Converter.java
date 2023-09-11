@@ -1,16 +1,13 @@
 package com.example.SLM_11092023.Converter;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/api/time")
 public class Converter {
 
-    @GetMapping("/{hour}")
-    public String convertToAMPM(@PathVariable int hour) {
+    @GetMapping
+    public String convertToAMPM(@RequestParam("h") int hour){
 
         if (hour <= 12) {
             if (hour == 12) {
